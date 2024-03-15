@@ -5,7 +5,8 @@ const Sequelize = require("sequelize");
 const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
     host: dbConfig.HOST,
     dialect: dbConfig.dialect,
-    operatorsAliases: false,
+    // if operatorsAliases: true this throws a warning A boolean value was passed to options.operatorsAliases. This is a no-op with v5 and should be removed.
+    operatorsAliases: 0,
 
     pool: {
         max: dbConfig.pool.max,
